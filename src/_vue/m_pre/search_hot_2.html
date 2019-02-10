@@ -1,0 +1,60 @@
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>效果展示</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="http://localhost:8888/style/reset.css" />
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<style>
+	.sec {
+	  margin-top: 15px;
+	  padding: 0 20px;
+	  font-size: 12px;
+	}
+	.sec h3 {
+	  height: 20px;
+	  line-height: 20px;
+	  color: #999;
+	  font-size: 12px;
+	  margin-bottom: 8px;
+	}
+	.sec ul {
+	  overflow: hidden;
+	}
+	.sec ul a {
+	  display: block;
+	  float: left;
+	  padding: 0 10px;
+	  background: #e5e5e5;
+	  height: 24px;
+	  line-height: 24px;
+	  margin: 0 5px 5px 0;
+	  border-radius: 3px;
+	  color: #555;
+	}
+
+	</style>
+</head>
+
+<body>
+<div class="sec hot">
+  <h3>热门搜索</h3>
+  <ul>
+    <a v-for="(word,index) in keywords" @click="clickSearch(word)" href="javascript:;" v-text="word"></a>
+  </ul>
+</div>
+</body>
+
+<script>
+new Vue({
+	el: '.sec',
+	data: function () {
+		return {
+			keywords: [111, 222, 333, 444]
+		}
+	},
+	methods: {}
+})
+</script>
+
+</html>

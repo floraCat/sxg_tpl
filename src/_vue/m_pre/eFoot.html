@@ -1,0 +1,125 @@
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>效果展示</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="http://localhost:8888/style/reset.css" />
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <style>
+    .eFoot {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 10000;
+        display: flex;
+        padding: 6px 0;
+        width: 100%;
+        height: 52px;
+        font-size: 12px;
+        background: #fff;
+        box-shadow: 1px 5px 15px rgba(50, 50, 50, 0.3);
+    }
+    .eFoot > li {
+        position: relative;
+        flex: 1;
+        text-align: center;
+    }
+    .eFoot > li a {
+        display: block;
+        font-size: 12px;
+        line-height: 20px;
+        color: #aaa;
+    }
+    .eFoot > li a > span {
+        position: relative;
+        display: block;
+        height: 30px;
+        text-align: center;
+    }
+    .eFoot > li a > span img {
+        width: 20px;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        margin-left: -10px;
+    }
+    .eFoot > li a.router-link-exact-active > p,
+    .eFoot > li.on a > p {
+        color: #ec5151;
+    }
+    .eFoot > li .num {
+        position: absolute;
+        top: -8px;
+        left: 30%;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        font-style: normal;
+        background: #ec5151;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <footer class="eFoot">
+        <li v-for="(col,index) in cols" :class="[col.name,{on: col.on}]">
+            <a href="col.href">
+                <span class="icon" v-show="!col.on"><img :src="col.icon" /></span>
+                <span class="iconOn" v-show="col.on"><img :src="col.iconOn" /></span>
+                <p v-text="col.ttl"></p>
+            </a>
+            <em v-if="col.name === 'cart' && cart_nums" class="num" v-text="cart_nums"></em>
+        </li>
+    </footer>
+</body>
+
+<script>
+new Vue({
+    el: '.eFoot',
+    data: function () {
+        return {
+            cols: [
+                {
+                    name: 'index',
+                    ttl: "首页", 
+                    on: true, 
+                    href: '#',
+                    icon: 'http://localhost:8888/imgs/circle.png',
+                    iconOn: 'http://localhost:8888/imgs/circle_on.png'
+                },
+                {
+                    name: 'cat',
+                    ttl: "分类", 
+                    on: false, 
+                    href: '#',
+                    icon: 'http://localhost:8888/imgs/circle.png',
+                    iconOn: 'http://localhost:8888/imgs/circle_on.png'
+                },
+                {
+                    name: 'cart',
+                    ttl: "购物车", 
+                    on: false, 
+                    href: '#',
+                    icon: 'http://localhost:8888/imgs/circle.png',
+                    iconOn: 'http://localhost:8888/imgs/circle_on.png'
+                },
+                {
+                    name: 'center',
+                    ttl: "个人中心", 
+                    on: false, 
+                    href: '#',
+                    icon: 'http://localhost:8888/imgs/circle.png',
+                    iconOn: 'http://localhost:8888/imgs/circle_on.png'
+                }
+            ],
+            cart_nums: 1
+        }
+    },
+    methods: {}
+})
+</script>
+
+</html>

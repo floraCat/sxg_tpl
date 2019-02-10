@@ -1,0 +1,104 @@
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>效果展示</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="http://localhost:8888/style/reset.css" />
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<style>
+	.invoice {
+	  background: #fff;
+	  margin-bottom: 10px;
+	}
+	.invoice .wrapper {
+	  display: flex;
+	  padding: 0 10px;
+	  height: 50px;
+	  line-height: 50px;
+	}
+	.invoice .wrapper.line {
+	  border-bottom: 1px solid #eae9e9;
+	}
+	.invoice .wrapper.pointer {
+	  cursor: pointer;
+	}
+	.invoice .wrapper > span > em {
+	  padding-left: 10px;
+	  color: #EC5151;
+	}
+	.invoice .wrapper .box-flex {
+	  flex: 1;
+	  text-align: right;
+	}
+	.invoice .wrapper .box-flex > i {
+	  display: inline-block;
+	}
+	.invoice .wrapper .box-flex .check {
+		position: relative;
+	  -webkit-appearance: none;
+	  display: inline-block;
+	  width: 50px;
+	  height: 24px;
+	  border-radius: 20px;
+	  border: 1px solid #d4d4d6;
+	  background-color: #fff;
+	  vertical-align: middle;
+	  margin-right: 20px;
+	  cursor: pointer;
+	}
+	.invoice .wrapper .box-flex .check:checked {
+	  box-shadow: #dfdfdf 0 0 0 0 inset;
+	  background-color: #64bd63;
+	  transition: border-color 0.4s, background-color ease 0.4s;
+	}
+	.invoice .wrapper .box-flex .check:checked:before {
+	  left: 26px;
+	}
+	.invoice .wrapper .box-flex .check:before {
+	  content: '';
+	  width: 22px;
+	  height: 22px;
+	  position: absolute;
+	  top: 0px;
+	  left: 0;
+	  border-radius: 20px;
+	  background-color: #fff;
+	  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	  transition: left 0.3s;
+	}
+	.invoice .wrapper .box-flex .price {
+	  color: #EC5151;
+	  font-size: 16px;
+	}
+	.invoice .wrapper .box-flex .inte {
+	  color: #EC5151;
+	  font-size: 14px;
+	}
+
+	</style>
+</head>
+
+<body>
+<div class="invoice">
+  <div class="wrapper">
+    <span>本单可使用易购豆抵扣</span>
+    <div class="box-flex">
+      <input class="check" type="checkbox" :checked="ddtFlag">
+    </div>
+  </div>
+</div>
+</body>
+
+<script>
+new Vue({
+	el: '.invoice',
+	data: function () {
+		return {
+			ddtFlag: 1
+		}
+	},
+	methods: {}
+})
+</script>
+
+</html>
