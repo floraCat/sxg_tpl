@@ -53,19 +53,19 @@ export default {
 <style lang="scss">
 .sxg-cat{ 
     overflow:hidden; 
-    width:240px;
+    width:15rem;
     li{ 
         float:left;  
-        padding:5px 10px;
+        padding:.3rem .625rem;
     }
     .img img{ 
-        width:60px; 
-        height:60px;
+        width:3.75rem; 
+        height:3.75rem;
     }
     h4{ 
         overflow: hidden; 
-        height: 21px; 
-        font-size:12px; 
+        height: 1.3125rem; 
+        font-size:.75rem; 
         font-weight:normal;
         text-align:center;
     }
