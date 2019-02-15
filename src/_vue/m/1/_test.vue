@@ -1,6 +1,6 @@
 <template>
 <div class="sxg-_test">
-    <div v-text="test1.b" @click="fun(test.b)"></div>
+    <div v-text="test1.b" @click="fun1(test1.b)"></div>
     <div v-if="test1.a === 111 && test3" v-text="test2"></div>
     <div :class="{on:cls.on, on2:cls.on2}">{{test1.a}}</div>
     <li v-for="cat in cats">
@@ -9,6 +9,9 @@
             <h4 v-text="cat.ttl"></h4>
         </a>
     </li>
+    <p v-for="col in cols">
+        <h4 v-text="col.ttl"></h4>
+    </p>
 </div>
 </template>
 
@@ -26,6 +29,19 @@ export default {
             },
             test2: 22222,
             test3: true,
+            test4: {
+                test5: {
+                    test6: 66666
+                }
+            },
+            cols: [
+                {
+                    ttl: '栏目1'
+                },
+                {
+                    ttl: '栏目2'
+                }
+            ],
             cats: [
                 {
                     ttl: '分类1',
@@ -61,8 +77,11 @@ export default {
         }
     },
     methods: {
-        fun () {
+        fun1 () {
             console.log(11111);
+        },
+        fun2 () {
+            console.log(22222);
         }
     }
 }
