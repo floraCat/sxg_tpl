@@ -1,28 +1,39 @@
 <template>
-<form class="p-search-010" name="form_search" method="get" action="#">
-    <input type="text" class="keyword" name="keyword" placeholder="..." />
-    <input type="submit" class="submit" value=">" />
+<form class="sxg-search">
+    <div class="icon"></div>
+    <input name="keyword" class="keyword" type="text" placeholder="搜索商品名称" />
 </form>
 </template>
 
 <script>
 export default {
-    data () {
-        return {}
+    data: function () {
+        return {};
+    },
+    methods: {}
+};
+</script>
+<style lang="scss">
+.sxg-search {
+    width: 70%;
+    height: .32rem;
+    border: #ddd .01rem solid;
+    border-radius: .16rem;
+    .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: .32rem;
+        height: .32rem;
+        background: url(~@/assets/imgs/circle.png) no-repeat center;
+        background-size: .2rem;
+    }
+    .keyword {
+        height: .32rem;
+        line-height: .26rem;
+        padding: .03rem .1rem .03rem .32rem;
+        border: none;
+        color: #666;
     }
 }
-</script>
-
-<style>
-.p-search-010{ position:relative; width:200px; height:30px;}
-.p-search-010 .keyword{ width:163px; height:24px; line-height:26px; padding:2px 3px; border-right:none;}
-.p-search-010 .submit{ position:absolute; top:0; right:0; width:30px; height:30px; background: #fff; cursor:pointer;}
 </style>
-
-<!--
-<data>[
-    {"label":"左边宽","tpl":"toolTop","TorB":"50px","left":"120px","lineHeight":"10px"},
-    {"label":"右边宽","tpl":"toolBtm","TorB":"50px","left":"210px","lineHeight":"10px"},
-    {"label":"整体高","tpl":"toolRt","TorB":"","left":"310px","lineHeight":"10px"}
-]</data>
--->

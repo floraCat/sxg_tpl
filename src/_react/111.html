@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Hello React!</title>
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+<style>
+.sxg-cat { 
+    overflow:hidden; 
+    width:240px;
+   }
+.sxg-cat li { 
+    float:left;  
+    padding:5px 10px;
+}
+.sxg-cat .img img { 
+    width:60px; 
+    height:60px;
+}
+.sxg-cat h4 { 
+    overflow: hidden; 
+    height: 21px; 
+    font-size:12px; 
+    font-weight:normal;
+    text-align:center;
+}
+</style>
+</head>
+<body>
+ 
+<div id="example"></div>
+<script type="text/babel">
+function App (props) {
+	const test1 = {
+        a: 111,
+        b: '222'
+    }
+    const test3 = 3333;
+	const cats= [
+        {
+            ttl: '分类1',
+            href: '#',
+            src: 'http://localhost:8000/imgs/11.jpg'
+        },
+        {
+            ttl: '分类2',
+            href: '#',
+            src: 'http://localhost:8000/imgs/11.jpg'
+        },
+        {
+            ttl: '分类3',
+            href: '#',
+            src: 'http://localhost:8000/imgs/11.jpg'
+        },
+        {
+            ttl: '分类4',
+            href: '#',
+            src: 'http://localhost:8000/imgs/11.jpg'
+        },
+        {
+            ttl: '分类5',
+            href: '#',
+            src: 'http://localhost:8000/imgs/11.jpg'
+        },
+        {
+            ttl: '分类6',
+            href: '#',
+            src: 'http://localhost:8000/imgs/11.jpg'
+        }
+    ];
+    const list = cats.map((cat,index) =>
+		<li key={index}>
+	        <a className="img" href={cat.href}>
+	            <img src={cat.src} alt={cat.ttl} />
+	            <h4>{cat.ttl}</h4>
+	        </a>
+	    </li>
+    );
+	return <ul className="sxg-cat">
+		<div>{test1.b}</div>
+	    <div>{test1.a}</div>
+	    <div>{test3}</div>
+		{list}
+	</ul>;
+}
+ReactDOM.render(
+    <App />,
+    document.getElementById('example')
+);
+</script>
+ 
+</body>
+</html>

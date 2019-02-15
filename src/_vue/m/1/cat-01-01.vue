@@ -1,12 +1,12 @@
 <template>
-<div class="sxg-cat">
-    <li v-for="cat in cats">
-        <a class="img" :href="cat.href">
+<ul class="sxg-cat">
+    <li v-for="(cat,index) in cats" v-bind:key="index">
+        <a :href="cat.href">
             <img :src="cat.src" :alt="cat.ttl" />
             <h4 v-text="cat.ttl"></h4>
         </a>
     </li>
-</div>
+</ul>
 </template>
 
 <script>
@@ -15,72 +15,83 @@ export default {
         return {
             cats: [
                 {
-                    ttl: '分类1',
-                    href: '#',
+                    ttl: '栏目1',
+                    href: '#1',
                     src: 'http://localhost:8000/imgs/11.jpg'
                 },
                 {
-                    ttl: '分类2',
-                    href: '#',
+                    ttl: '栏目2',
+                    href: '#2',
                     src: 'http://localhost:8000/imgs/11.jpg'
                 },
                 {
-                    ttl: '分类3',
-                    href: '#',
+                    ttl: '栏目3',
+                    href: '#3',
                     src: 'http://localhost:8000/imgs/11.jpg'
                 },
                 {
-                    ttl: '分类4',
-                    href: '#',
+                    ttl: '栏目4',
+                    href: '#4',
                     src: 'http://localhost:8000/imgs/11.jpg'
                 },
                 {
-                    ttl: '分类5',
-                    href: '#',
+                    ttl: '栏目5',
+                    href: '#5',
                     src: 'http://localhost:8000/imgs/11.jpg'
                 },
                 {
-                    ttl: '分类6',
-                    href: '#',
+                    ttl: '栏目6',
+                    href: '#6',
+                    src: 'http://localhost:8000/imgs/11.jpg'
+                },
+                {
+                    ttl: '栏目7',
+                    href: '#7',
+                    src: 'http://localhost:8000/imgs/11.jpg'
+                },
+                {
+                    ttl: '栏目8',
+                    href: '#8',
+                    src: 'http://localhost:8000/imgs/11.jpg'
+                },
+                {
+                    ttl: '栏目9',
+                    href: '#9',
+                    src: 'http://localhost:8000/imgs/11.jpg'
+                },
+                {
+                    ttl: '栏目10',
+                    href: '#10',
                     src: 'http://localhost:8000/imgs/11.jpg'
                 }
             ]
-        }
+        };
     },
     methods: {}
-}
+};
 </script>
 <style lang="scss">
-.sxg-cat{ 
-    overflow:hidden; 
-    width:240px;
-    li{ 
-        float:left;  
-        padding:5px 10px;
+.sxg-cat {
+    overflow: hidden;
+    li {
+        float: left;
+        width: 20%;
     }
-    .img img{ 
-        width:60px; 
-        height:60px;
+    a {
+        display: block;
+        width: .65rem;
+        padding: .05rem 0;
+        margin: 0 auto;
     }
-    h4{ 
-        overflow: hidden; 
-        height: 21px; 
-        font-size:12px; 
-        font-weight:normal;
-        text-align:center;
+    img {
+        width: .36rem;
+        height: .36rem;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    h4 {
+        text-align: center;
+        line-height: .26rem;
     }
 }
 </style>
-
-<!--
-<dataTool>[
-    {"label":"左边宽","tpl":"toolTop","TorB":"50px","left":"120px","lineHeight":"10px"},
-    {"label":"右边宽","tpl":"toolBtm","TorB":"50px","left":"210px","lineHeight":"10px"},
-    {"label":"整体高","tpl":"toolRt","TorB":"","left":"310px","lineHeight":"10px"}
-]</dataTool>
-<dataMod>[
-    {"cls":[".keyword"],"prop":"width","val":"163px"},
-    {"cls":[".submit"],"prop":"width","val":"30px"},
-    {"cls":[".keyword",".submit"],"prop":"height","val":"40px"}
-]</dataMod>
--->

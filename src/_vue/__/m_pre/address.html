@@ -1,0 +1,79 @@
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>效果展示</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="http://localhost:8888/style/reset.css" />
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<style>
+	.address {
+	  position: relative;
+	  margin-bottom: 10px;
+	  background: #fff;
+	}
+	.address > a {
+	  display: block;
+	  padding: 20px 30px 20px 20px;
+	  border-top: #ddd 1px solid;
+	  border-bottom: #44A0FF 3px solid;
+	}
+	.address > a .infos {
+	  height: 24px;
+	  line-height: 24px;
+	  font-size: 14px;
+	  color: #333;
+	}
+	.address > a .infos > span {
+	  display: inline-block;
+	  padding-right: 10px;
+	}
+	.address > a .infos > em {
+	  display: inline-block;
+	  color: #EC5151;
+	  padding-left: 10px;
+	}
+	.address > a .position {
+	  line-height: 24px;
+	  color: #777;
+	  font-size: 14px;
+	}
+	.address > a > i {
+	  display: block;
+	  position: absolute;
+	  right: 5px;
+	  top: 50%;
+	  height: 30px;
+	  line-height: 30px;
+	  margin-top: -15px;
+	}
+
+	</style>
+</head>
+
+<body>
+<div class="address">
+  <a href="javascript:;">
+    <div class="infos">
+      <span v-text="onAddress.consignee"></span><span v-text="onAddress.mobile"></span>
+      <em v-show="onAddress.is_default">默认地址</em>
+    </div>
+    <div class="position" v-text="onAddress.full_address">
+    </div>
+    <i class="icon-enter">》</i>
+  </a>
+</div>
+</body>
+
+<script>
+new Vue({
+	el: '.address',
+	data: function () {
+		return {
+			onAddress: {consignee:'AAA', mobile:'123456788', is_default: 1},
+		}
+	},
+	methods: {}
+})
+</script>
+
+</html>

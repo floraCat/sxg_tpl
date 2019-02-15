@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import tpl from '@/_vue/m/1/head-01-01.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import tpl from '@/_vue/m/1/banner-01-01.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [
@@ -12,4 +12,4 @@ export default new Router({
             component: tpl
         }
     ]
-})
+});

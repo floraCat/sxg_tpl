@@ -1,12 +1,12 @@
 <template>
-<footer class="eFoot">
+<footer class="sxg-footnav">
     <li v-for="col in cols" :class="[col.name,{on: col.on}]" v-bind:key="col.id">
         <a :href="col.href">
             <span class="icon" v-show="!col.on"><img :src="col.icon" /></span>
             <span class="iconOn" v-show="col.on"><img :src="col.iconOn" /></span>
             <p v-text="col.ttl"></p>
         </a>
-        <em v-if="col.name === 'cart' && cart_nums" class="num" v-text="cart_nums"></em>
+        <em v-if="'cart' === col.name && cart_nums" class="num" v-text="cart_nums"></em>
     </li>
 </footer>
 </template>
@@ -60,7 +60,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.eFoot {
+.sxg-footnav {
     position: fixed;
     bottom: 0;
     left: 0;

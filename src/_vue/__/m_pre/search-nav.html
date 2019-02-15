@@ -1,0 +1,172 @@
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>效果展示</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="http://localhost:8888/style/reset.css" />
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<style>
+	  .search-nav {
+	    position: relative;
+	    width: 318px;
+	    height: 45px;
+	    line-height: 45px;
+	    z-index: 1100;
+	  }
+	  .search-nav .input-group {
+	    float: left;
+	    width: 245px;
+	    height: 100%;
+	    background: #eee;
+	  }
+	  .search-nav .input-group .dropdown {
+	    display: inline-block;
+	    width: 70px;
+	    height: 100%;
+	  }
+	  .search-nav .input-group .keyword {
+	  	display: inline;
+	    position: absolute;
+	    left: 66px;
+	    width: 180px;
+	    height: 100%;
+	    font-size: 15px;
+	    color: #666;
+	    border: none;
+	  }
+	  .search-nav .button {
+	    position: absolute;
+	    right: 0;
+	    display: block;
+	    width: 72px;
+	    height: 100%;
+	    color: #fff;
+	    font-size: 15px;
+	    box-sizing: border-box;
+	    border: none;
+	    border-radius: 0 4px 4px 0;
+	    background: #EC5151;
+	  }
+
+	  .dropdown-page {
+	    position: relative;
+	    display: inline-block;
+	    width: 100%;
+	    height: 100%;
+	  }
+	  .dropdown-page .dropdown-toggle {
+	    position: absolute;
+	    display: inline-block;
+	    top: 0;
+	    padding: 0 12px;
+	    margin-bottom: 0;
+	    width: 100%;
+	    height: 100%;
+	    font-size: 14px;
+	    font-weight: 400;
+	    line-height: 1.42857143;
+	    text-align: left;
+	    white-space: nowrap;
+	    vertical-align: middle;
+	    -ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	    cursor: pointer;
+	    user-select: none;
+	    border: none;
+	    color: #333;
+	  }
+	  .dropdown-page .icon {
+	    vertical-align: middle;
+	  }
+	  .dropdown-page .dropdown-menu {
+	    position: absolute;
+	    top: 100%;
+	    left: 0;
+	    z-index: 1000;
+	    float: left;
+	    min-width: 160px;
+	    padding: 5px 0;
+	    margin: 2px 0 0;
+	    font-size: 14px;
+	    text-align: left;
+	    list-style: none;
+	    background-color: #fff;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    border: 1px solid #ccc;
+	    border: 1px solid rgba(0, 0, 0, 0.15);
+	    border-radius: 4px;
+	    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	  }
+	  .dropdown-page .dropdown-menu a {
+	    display: block;
+	    padding: 3px 20px;
+	    clear: both;
+	    font-weight: 400;
+	    line-height: 1.42857143;
+	    color: #333;
+	    white-space: nowrap;
+	  }
+
+	</style>
+</head>
+
+<body>
+<div class="search-nav">
+	<div class="icon input-group">
+		<div class="dropdown">
+			<div class="dropdown-page">
+			    <button type="button" class="dropdown-toggle" v-on:click="handleToggle">
+			    	<span v-text="curSelect"></span>
+			    	<i class="icon"></i>
+			    </button>
+
+			    <ul v-show="toggle" class="dropdown-menu">
+			      <li v-for="(item, index) in menu" :key="index" v-on:click="handleSelect(item)">
+			      	<a href="javascript:;" v-text="item.name"></a>
+			     	</li>
+			    </ul>
+			</div>
+		</div>
+		<input type="text" 
+					 class="keyword" 
+					 placeholder="商品/店铺搜索"
+					 v-model="keyword"
+		>
+	</div>
+	<button type="button" class="button" @click="submitSearch">搜索</button>
+</div>
+</body>
+
+<script>
+new Vue({
+	el: '.search-nav',
+	data: function () {
+		return {
+			menu: [
+				{ name: '商品'},
+				{ name: '店铺'},
+			],
+			curSelect: "商品",
+			toggle: false,
+			keyword: ''
+		}
+	},
+	methods: {
+		handleToggle: function () {
+			this.toggle = !this.toggle
+		},
+
+		handleSelect: function (item) {
+			this.curSelect = item.name;
+			this.toggle = false
+		},
+
+		// 搜索
+		submitSearch: function () {},
+	}
+})
+</script>
+
+</html>

@@ -1,0 +1,79 @@
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>效果展示</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="http://localhost:8888/style/reset.css" />
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<style>
+	.eg_menu {
+	  width: 100%;
+	  min-height: 20px;
+	}
+	.eg_menu.refresh img {
+	  opacity: .3;
+	}
+	.eg_menu ul {
+	  width: 100%;
+	  padding: 8px 8px 14px;
+	  overflow: hidden;
+	}
+	.eg_menu ul li {
+	  float: left;
+	  width: 20%;
+	  height: 100px;
+	  background: #333;
+	}
+	.eg_menu ul li a {
+	  width: 100%;
+	  height: 100%;
+	  font-size: 11px;
+	  text-align: center;
+	  background-size: 40px auto;
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  display: block;
+	  padding-top: 15px;
+	}
+	.eg_menu ul li a img {
+	  width: 60%;
+	  height: auto;
+	  margin: 0 auto 10px;
+	}
+
+	</style>
+</head>
+
+<body>
+<div class="eg_menu">
+  <ul>
+    <li v-for="(item,index) in items" v-bind:key="index">
+      <a :href="item.url">
+        <img :src="item.pic" :alt="item.name">
+        <span v-text="item.name"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+</body>
+
+<script>
+new Vue({
+	el: '.eg_menu',
+	data: function () {
+		return {
+			items: [
+		        {url:'#', name:'aaa', pic:'./images/11.jpg'},
+		        {url:'#', name:'bbb', pic:'./images/11.jpg'},
+		        {url:'#', name:'ccc', pic:'./images/11.jpg'},
+		        {url:'#', name:'ccc', pic:'./images/11.jpg'},
+		        {url:'#', name:'ccc', pic:'./images/11.jpg'},
+		        {url:'#', name:'ccc', pic:'./images/11.jpg'},
+		      ]
+		}
+	},
+	methods: {}
+})
+</script>
+
+</html>

@@ -1,0 +1,181 @@
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>效果展示</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="http://localhost:8888/style/reset.css" />
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<style>
+	/*底部*/
+	.footBanner {
+	  z-index: 800;
+	  position: fixed;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	}
+	.footBanner ._wrap {
+	  width: 100%;
+	  max-width: 640px;
+	  margin: 0 auto;
+	}
+	.footBanner .lt {
+	  float: left;
+	  width: 255px;
+	  height: 50px;
+	  background: #E1E1E1;
+	  line-height: 20px;
+	  font-size: 12px;
+	}
+	.footBanner .lt ._cart {
+	  position: absolute;
+	  bottom: 6px;
+	  left: 20px;
+	  width: 50px;
+	  height: 50px;
+	  line-height: 46px;
+	  text-align: center;
+	  background: #999;
+	  border-radius: 50%;
+	}
+	.footBanner .lt ._cart i {
+	  font-size: 1.8rem;
+	  text-align: center;
+	  line-height: 55px;
+	  color: #fff;
+	}
+	.footBanner .lt ._cart span {
+	  position: absolute;
+	  top: -6px;
+	  right: -6px;
+	  width: 24px;
+	  height: 24px;
+	  font-size: 11px;
+	  line-height: 25px;
+	  text-align: center;
+	  color: #fff;
+	  font-weight: bold;
+	  border-radius: 50%;
+	  background: #EC5151;
+	}
+	.footBanner .lt ._cart.on {
+	  background: #44A0FF;
+	}
+	.footBanner .lt ._sel {
+	  position: absolute;
+	  top: 0;
+	  left: .15rem;
+	  width: 40px;
+	  height: 50px;
+	  line-height: 52px;
+	  text-align: center;
+	  cursor: pointer;
+	}
+	.footBanner .lt ._sel.on > i {
+	  font-size: 1.3rem;
+	}
+	.footBanner .lt ._sel > i {
+	  font-size: 1.3rem;
+	  color: #44A0FF;
+	}
+	.footBanner .lt ._sel > span {
+	  display: inline-block;
+	  position: absolute;
+	  height: 24px;
+	  font-size: .8rem;
+	  line-height: 24px;
+	  top: 50%;
+	  margin-top: -12px;
+	  left: 28px;
+	  width: 100%;
+	  color: #9a9a9a;
+	}
+	.footBanner .lt ._sum {
+	  padding-left: 82px;
+	  height: 50px;
+	  line-height: 50px;
+	  color: #44A0FF;
+	}
+	.footBanner .lt ._sum span {
+	  font-size: 18px;
+	}
+	.footBanner .lt ._sum em {
+	  font-size: 20px;
+	  font-weight: bold;
+	}
+	.footBanner .lt ._sum label {
+	  color: #9a9a9a;
+	  vertical-align: top;
+	}
+	.footBanner .lt ._note {
+	  padding-left: 82px;
+	  color: #9a9a9a;
+	}
+	.footBanner .rt {
+	  float: right;
+	  width: 120px;
+	  text-align: center;
+	  height: 50px;
+	  line-height: 50px;
+	  background: #999;
+	  font-size: 16px;
+	  color: #fff;
+	}
+	.footBanner .rt span {
+	  display: inline-block;
+	  width: 20px;
+	  height: 20px;
+	  line-height: 20px;
+	  background: #fff;
+	  color: #44A0FF;
+	  font-size: 11px;
+	  text-align: center;
+	  margin-left: .2rem;
+	  border-radius: 50%;
+	}
+	.footBanner .rt.on {
+	  background: #44A0FF;
+	}
+	</style>
+</head>
+
+<body>
+<div class="footBanner" v-if="flag">
+  <div class="_wrap">
+    <ol class="lt">
+      <div class="_sel" :class="{'on':allSelect}" @click="selectAllShop">
+        <i class="iconfont icon-check_off" v-show="!allSelect"></i>
+          <i class="iconfont icon-check_on" v-show="allSelect"></i>
+        <span>全选</span>
+      </div>
+      <div class="_sum">
+        <label>合计：</label><span>¥</span><em>{{ totalPrice }}</em>
+      </div>
+      <p class="_note">配送费：￥0</p>
+    </ol>
+    <a class="rt" :class="{on:totalNumber}" href="javascript:" @click="settlement">去结算
+      <!-- <span v-show="totalNumber">{{totalNumber}}</span> -->
+    </a>
+  </div>
+</div>
+</body>
+
+<script>
+new Vue({
+	el: '.footBanner',
+	data: function () {
+		return {
+			flag: 1,
+			allSelect: true,
+			totalNumber: 11,
+			totalPrice: 111
+		}
+	},
+	methods: {
+		selectAllShop: function () {},
+		settlement: function () {},
+	}
+})
+</script>
+
+</html>
