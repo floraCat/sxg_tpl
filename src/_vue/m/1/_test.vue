@@ -1,7 +1,8 @@
 <template>
 <div class="sxg-_test">
-    <div v-text="test1.b" @click="fun1(test1.b)"></div>
-    <div v-if="test1.a === 111 && test3" v-text="test2"></div>
+    <div v-text="test1.b" @click="fun1(test1.a)"></div>
+    <div v-if="'222' === test1.b && test3">has-v-if</div>
+    <div v-if="test3" @click="fun2()">has-v-if-2</div>
     <div :class="{on:cls.on, on2:cls.on2}">{{test1.a}}</div>
     <li v-for="cat in cats">
         <a class="img" :href="cat.href">
@@ -16,6 +17,8 @@
 </template>
 
 <script>
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.css';
 export default {
     data () {
         return {
@@ -76,13 +79,16 @@ export default {
             ]
         }
     },
+    mounted () {
+        console.log('mounted');
+    },
     methods: {
         fun1 () {
             console.log(11111);
         },
         fun2 () {
             console.log(22222);
-        }
+        },
     }
 }
 </script>
