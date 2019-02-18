@@ -11,10 +11,10 @@ export default {
     data: function () {
         return {
             pageTitle: '页面标题'
-        }
+        };
     },
     methods: {}
-}
+};
 </script>
 <style lang="scss">
 .sxg-head {

@@ -30,28 +30,28 @@ export default {
             ]
         };
     },
+    mounted: function () {
+        this.action();
+    },
     methods: {
         action: function () {
             let self = this;
             self.$nextTick(function () {
                 /* eslint-disable */
                 new Swiper(self.$refs.bannerSwiper, {
-                autoplay: {
-                    delay: 3000,
-                    stopOnLastSlide: true
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                },
-                loop: true
-            });
+                    autoplay: {
+                        delay: 3000,
+                        stopOnLastSlide: true
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    loop: true
+                });
                 /* eslint-enable */
             });
         }
-    },
-    mounted: function () {
-        this.action();
     }
 };
 </script>
@@ -65,3 +65,16 @@ export default {
     }
 }
 </style>
+
+<!--
+<dataTool>[
+    {"label":"左边宽","tpl":"toolTop","TorB":"50px","left":"120px","lineHeight":"10px"},
+    {"label":"右边宽","tpl":"toolBtm","TorB":"50px","left":"210px","lineHeight":"10px"},
+    {"label":"整体高","tpl":"toolRt","TorB":"","left":"310px","lineHeight":"10px"}
+]</dataTool>
+<dataMod>[
+    {"cls":[".keyword"],"prop":"width","val":"163px"},
+    {"cls":[".submit"],"prop":"width","val":"30px"},
+    {"cls":[".keyword",".submit"],"prop":"height","val":"40px"}
+]</dataMod>
+-->

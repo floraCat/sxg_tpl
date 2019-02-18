@@ -10,8 +10,8 @@
             <h4 v-text="cat.ttl"></h4>
         </a>
     </li>
-    <p v-for="col in cols">
-        <h4 v-text="col.ttl"></h4>
+    <p>
+        <h4 v-for="col in cols" v-text="col.ttl"></h4>
     </p>
 </div>
 </template>
@@ -77,7 +77,7 @@ export default {
                     src: 'http://localhost:8000/imgs/11.jpg'
                 }
             ]
-        }
+        };
     },
     mounted () {
         console.log('mounted');
@@ -90,7 +90,7 @@ export default {
             console.log(22222);
         },
     }
-}
+};
 </script>
 <style lang="scss">
 .sxg-_test{ 

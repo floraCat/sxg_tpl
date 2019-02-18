@@ -54,10 +54,10 @@ export default {
                 }
             ],
             cart_nums: 1
-        }
+        };
     },
     methods: {}
-}
+};
 </script>
 <style lang="scss">
 .sxg-footnav {
@@ -115,3 +115,16 @@ export default {
     }
 }
 </style>
+
+<!--
+<dataTool>[
+    {"label":"左边宽","tpl":"toolTop","TorB":"50px","left":"120px","lineHeight":"10px"},
+    {"label":"右边宽","tpl":"toolBtm","TorB":"50px","left":"210px","lineHeight":"10px"},
+    {"label":"整体高","tpl":"toolRt","TorB":"","left":"310px","lineHeight":"10px"}
+]</dataTool>
+<dataMod>[
+    {"cls":[".keyword"],"prop":"width","val":"163px"},
+    {"cls":[".submit"],"prop":"width","val":"30px"},
+    {"cls":[".keyword",".submit"],"prop":"height","val":"40px"}
+]</dataMod>
+-->
