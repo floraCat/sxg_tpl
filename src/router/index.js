@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import tpl from '@/_vue/m/1/banner-01-01.vue';
+import tpl from '@/_vue/m/1/cat-02-01.vue';
 
 Vue.use(Router);
 

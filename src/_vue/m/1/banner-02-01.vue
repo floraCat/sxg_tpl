@@ -7,7 +7,6 @@
                 </a>
             </div>
         </div>
-        <div class="swiper-pagination" slot="pagination"></div>
     </div>
 </template>
 
@@ -19,6 +18,10 @@ export default {
     data: function () {
         return {
             items: [
+                {
+                    href: '#',
+                    src: 'http://localhost:8000/images/11.jpg'
+                },
                 {
                     href: '#',
                     src: 'http://localhost:8000/images/11.jpg'
@@ -39,15 +42,7 @@ export default {
             self.$nextTick(function () {
                 /* eslint-disable */
                 new Swiper(self.$refs.bannerSwiper, {
-                    autoplay: {
-                        delay: 3000,
-                        stopOnLastSlide: true
-                    },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    loop: true
+                    slidesPerView: 1.5
                 });
                 /* eslint-enable */
             });
@@ -60,9 +55,6 @@ export default {
     position: relative;
     height: 2rem;
     overflow: hidden;
-    .swiper-pagination {
-        bottom: 0;
-    }
 }
 </style>
 
