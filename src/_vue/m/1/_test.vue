@@ -84,10 +84,12 @@ export default {
     },
     methods: {
         fun1 () {
-            console.log(11111);
+            let a = 1111;
+            console.log(a);
         },
         fun2 () {
-            console.log(22222);
+            const b = 2222;
+            console.log(b);
         },
     }
 };
